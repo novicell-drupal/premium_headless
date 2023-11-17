@@ -1,0 +1,6 @@
+services:
+  premium_headless.controller_alter:
+    class: Drupal\premium_headless\EventSubscriber\ControllerAlterSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }

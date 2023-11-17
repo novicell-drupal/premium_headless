@@ -1,0 +1,11 @@
+name: Premium headless
+description: Includes basic setup for headless sites using Transform API.
+package: Drupal Premium
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+
+dependencies:
+  - transform_api:transform_api
+
+interface translation project: premium_headless
+interface translation server pattern: modules/premium_headless/translations/%language.po
