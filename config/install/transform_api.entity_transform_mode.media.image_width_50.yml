@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_width_50
+label: 'Image - Width 50'
+targetEntityType: media
+cache: true

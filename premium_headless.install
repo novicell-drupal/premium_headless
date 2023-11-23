@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\premium_search\Event\AlterSearchSnippetEvent;
+use Drupal\transform_api\Transform\EntityTransform;
+
+/**
+ * Implements hook_install().
+ */
+function premium_headless_install() {
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface $module_handler */
+  $module_handler = \Drupal::service('module_handler');
+  /** @var \Drupal\Core\Extension\ModuleInstaller $installer */
+  $installer = \Drupal::service('module_installer');
+  if ($module_handler->moduleExists('premium_articles') && $module_handler->moduleExists('entity_overview')) {
+    $installer->install(['entity_overview_transform']);
+  }
+  $installer->install(['transform_api_redirect']);
+
+  $config = \Drupal::configFactory()->getEditable('transform_api.regions');
+  $regions = $config->get('regions');
+  $regions['header'] = t('Header');
+  $regions['footer'] = t('Footer');
+  $config->save();
+}

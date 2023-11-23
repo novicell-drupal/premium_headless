@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.width_100
+label: 'Width 100'
+targetEntityType: paragraph
+cache: true

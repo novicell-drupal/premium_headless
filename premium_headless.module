@@ -1,7 +1,9 @@
 <?php
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\premium_search\Event\AlterSearchSnippetEvent;
+use Drupal\transform_api\Transform\EntityTransform;
 
 /**
  * Implements hook_locale_translation_projects_alter().
@@ -25,5 +27,118 @@ function premium_headless_locale_translation_projects_alter(&$projects) {
 function premium_headless_element_info_alter(array &$types) {
   if (isset($types['layout_builder'])) {
     $types['layout_builder']['#attached']['library'][] = 'premium_headless_theme/layout-builder';
+  }
+}
+
+
+/**
+ * Implements hook_HOOK_transform_alter().
+ */
+function premium_headless_entity_transform_alter(&$transformation) {
+  if (empty($transformation)) {
+    return;
+  }
+  /** @var ContentEntityInterface $entity */
+  $entity = $transformation['#entity'];
+
+  /* Layout block alterations */
+  if ($transformation['entity_type'] === 'block_content') {
+    /** @var \Drupal\block_content\Entity\BlockContent $block */
+    $block = $entity;
+
+    if ($transformation['bundle'] == 'inline_navigation') {
+      $mode = 'pages';
+      if (Drupal::moduleHandler()
+          ->moduleExists('content_hierarchy') && isset($transformation['field_inline_navigation_mode']) && !empty($transformation['field_inline_navigation_parent'])) {
+        if ($entity->hasField('field_inline_navigation_mode') && !$entity->get('field_inline_navigation_mode')
+            ->isEmpty() && !empty($entity->get('field_inline_navigation_mode')
+            ->getValue())) {
+          $mode = $entity->get('field_inline_navigation_mode')
+            ->first()
+            ->getValue()['value'];
+        }
+      }
+      if ($mode === 'parent') {
+        $transformation['items'] = $transformation['field_inline_navigation_parent'];
+        unset($transformation['field_inline_navigation_parent']);
+        unset($transformation['field_inline_navigation_pages']);
+      }
+      else {
+        $transformation['items'] = $transformation['field_inline_navigation_pages'];
+        unset($transformation['field_inline_navigation_parent']);
+        unset($transformation['field_inline_navigation_pages']);
+      }
+    } elseif ($transformation['bundle'] == 'image') {
+      if ($block->hasField('field_dynamic_height') && (int) $block->get('field_dynamic_height')->value === 1) {
+        $transform_mode = $transformation['transform_mode'];
+        if ($transform_mode === 'full_width') {
+          $transform_mode = 'full_width_flex_height';
+        }
+        else {
+          $transform_mode .= '_flex_height';
+        }
+        dpm($transformation['field_image_media']);
+      }
+    }
+  }
+
+  /* Node alterations */
+  elseif ($transformation['entity_type'] === 'node') {
+    /** @var \Drupal\node\Entity\Node $node */
+    $node = $entity;
+    if (isset($transformation['transform_mode']) && in_array($transformation['transform_mode'], [
+        'teaser',
+        'inline_navigation'
+      ])) {
+      $transformation['url'] = $entity->toUrl()->toString();
+    }
+  }
+}
+
+/**
+ * Implements hook_HOOK_transform_alter().
+ */
+function premium_headless_section_transform_alter(&$transformation) {
+  $layout_id = $transformation['layout_id'];
+  foreach ($transformation['regions'] as $region => $components) {
+    switch ($layout_id) {
+      case 'layout_onecol':
+        if (isset($transformation['layout_settings']['column_width']) && $transformation['layout_settings']['column_width'] == 'section--width-full') {
+          $transform_mode = 'full_width';
+        } elseif (isset($transformation['layout_settings']['column_width']) && $transformation['layout_settings']['column_width'] == 'section--width-narrow') {
+          $transform_mode = 'width_66';
+        } else {
+          $transform_mode = 'width_100';
+        }
+        break;
+      case 'layout_twocol_section':
+        if (isset($transformation['layout_settings']['column_widths']) && $transformation['layout_settings']['column_widths'] == '67-33') {
+          if ($region == 'first') {
+            $transform_mode = 'width_66';
+          } else {
+            $transform_mode = 'width_33';
+          }
+        } elseif (isset($transformation['layout_settings']['column_widths']) && $transformation['layout_settings']['column_widths'] == '33-67') {
+          if ($region == 'first') {
+            $transform_mode = 'width_33';
+          } else {
+            $transform_mode = 'width_66';
+          }
+        } else {
+          $transform_mode = 'width_50';
+        }
+        break;
+      case 'layout_threecol_section':
+        $transform_mode = 'width_33';
+        break;
+      default:
+        $transform_mode = 'default';
+        break;
+    }
+    foreach ($components as $index => $component) {
+      if ($component instanceof \Drupal\transform_api\Transform\EntityTransform) {
+        $component->setValue('transform_mode', $transform_mode);
+      }
+    }
   }
 }

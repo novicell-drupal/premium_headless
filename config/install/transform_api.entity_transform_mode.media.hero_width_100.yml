@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.hero_width_100
+label: 'Hero - Width 100'
+targetEntityType: media
+cache: true

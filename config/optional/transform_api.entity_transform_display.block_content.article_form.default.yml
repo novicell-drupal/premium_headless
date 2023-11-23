@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.article_form
+    - field.field.block_content.article_form.field_articles_form
+  module:
+    - entity_overview_transform
+id: block_content.article_form.default
+targetEntityType: block_content
+bundle: article_form
+mode: default
+content:
+  field_articles_form:
+    type: entity_overview_form
+    weight: '0'
+    region: content
+    label: omit
+    settings:
+      transform_mode: teaser
+    third_party_settings: {  }
+hidden: {  }

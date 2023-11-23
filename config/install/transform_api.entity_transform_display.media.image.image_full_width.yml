@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_media_category
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.full_width_16_9
+    - transform_api.entity_transform_mode.media.image_full_width
+id: media.image.image_full_width
+targetEntityType: media
+bundle: image
+mode: image_full_width
+content:
+  field_media_image:
+    type: responsive_image
+    weight: '0'
+    region: content
+    label: omit
+    settings:
+      responsive_image_style: full_width_16_9
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+hidden:
+  field_media_category: true

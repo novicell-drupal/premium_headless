@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_full_width
+label: 'Image - Full width'
+targetEntityType: media
+cache: true

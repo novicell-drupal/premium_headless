@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_width_33_flex
+label: 'Image - Width 33 flex'
+targetEntityType: media
+cache: true

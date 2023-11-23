@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.articles
+    - field.field.block_content.articles.field_articles
+  module:
+    - entity_overview_transform
+id: block_content.articles.default
+targetEntityType: block_content
+bundle: articles
+mode: default
+content:
+  field_articles:
+    type: entity_overview_list
+    weight: '0'
+    region: content
+    label: omit
+    settings:
+      transform_mode: teaser
+    third_party_settings: {  }
+hidden: {  }

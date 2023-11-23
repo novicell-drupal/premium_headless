@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.list_view
+label: 'List view'
+targetEntityType: media
+cache: true

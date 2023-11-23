@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.rte
+    - field.field.block_content.rte.field_text
+id: block_content.rte.default
+targetEntityType: block_content
+bundle: rte
+mode: default
+content:
+  field_text:
+    type: text_format
+    weight: '0'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

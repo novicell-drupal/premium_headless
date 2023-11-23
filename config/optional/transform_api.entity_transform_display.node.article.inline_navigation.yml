@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.field_article_type
+    - field.field.node.article.field_description
+    - field.field.node.article.field_header
+    - field.field.node.article.field_hide_breadcrumb
+    - field.field.node.article.field_hide_title
+    - field.field.node.article.field_list_date
+    - field.field.node.article.field_list_media
+    - field.field.node.article.layout_builder__layout
+    - node.type.article
+    - transform_api.entity_transform_mode.node.inline_navigation
+id: node.article.inline_navigation
+targetEntityType: node
+bundle: article
+mode: inline_navigation
+content:
+  field_article_type:
+    type: entity_reference_links
+    weight: '2'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: value
+    weight: '0'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_list_date:
+    type: datetime_simple
+    weight: '4'
+    region: content
+    label: omit
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_list_media:
+    type: entity_transform
+    weight: '1'
+    region: content
+    label: omit
+    settings:
+      transform_mode: list_view
+    third_party_settings: {  }
+hidden:
+  field_header: true
+  field_hide_breadcrumb: true
+  field_hide_title: true
+  field_meta_tags: true
+  layout_builder__layout: true

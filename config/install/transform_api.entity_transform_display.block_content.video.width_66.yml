@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.video
+    - field.field.block_content.video.field_video_headline
+    - field.field.block_content.video.field_video_media
+    - field.field.block_content.video.field_video_subline
+    - field.field.block_content.video.field_video_text_color
+    - transform_api.entity_transform_mode.block_content.width_66
+id: block_content.video.width_66
+targetEntityType: block_content
+bundle: video
+mode: width_66
+content:
+  field_video_headline:
+    type: value
+    weight: '0'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_video_media:
+    type: entity_transform
+    weight: '3'
+    region: content
+    label: omit
+    settings:
+      transform_mode: image_width_66
+    third_party_settings: {  }
+  field_video_subline:
+    type: value
+    weight: '1'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_video_text_color:
+    type: value
+    weight: '2'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

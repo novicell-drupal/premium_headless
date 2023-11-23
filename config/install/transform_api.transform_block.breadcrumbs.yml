@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: breadcrumbs
+region: content
+weight: '-2'
+provider: null
+plugin: breadcrumbs
+settings:
+  id: breadcrumbs
+  label: Breadcrumbs
+  provider: transform_api
+  label_display: null
+visibility: {  }

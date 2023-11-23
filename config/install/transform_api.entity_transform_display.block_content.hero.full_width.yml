@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.field.block_content.hero.field_hero
+    - transform_api.entity_transform_mode.block_content.full_width
+id: block_content.hero.full_width
+targetEntityType: block_content
+bundle: hero
+mode: full_width
+content:
+  field_hero:
+    type: entity_transform
+    weight: '0'
+    region: content
+    label: omit
+    settings:
+      transform_mode: full_width
+    third_party_settings: {  }
+hidden: {  }

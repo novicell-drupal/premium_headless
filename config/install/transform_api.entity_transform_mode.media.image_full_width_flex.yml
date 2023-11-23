@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_full_width_flex
+label: 'Image - Full width flex'
+targetEntityType: media
+cache: true
