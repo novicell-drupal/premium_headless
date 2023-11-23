@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.backend_teaser
+label: 'Backend Teaser'
+targetEntityType: media
+cache: true

@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: backend_thumbnail
+label: 'Backend Thumbnail'
+effects:
+  85aaf94e-497d-44dc-8dcc-80e0d3b12444:
+    uuid: 85aaf94e-497d-44dc-8dcc-80e0d3b12444
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      crop_type: focal_point
+pipeline: __default__

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.backend_hero
+id: backend_hero
+label: 'Backend Hero'
+image_style_mappings: {  }
+breakpoint_group: responsive_image
+fallback_image_style: backend_hero

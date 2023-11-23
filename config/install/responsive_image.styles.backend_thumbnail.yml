@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.backend_thumbnail
+id: backend_thumbnail
+label: 'Backend Thumbnail'
+image_style_mappings: {  }
+breakpoint_group: responsive_image
+fallback_image_style: backend_thumbnail
