@@ -6,8 +6,6 @@ dependencies:
     - field.field.block_content.inline_navigation.field_inline_navigation_mode
     - field.field.block_content.inline_navigation.field_inline_navigation_pages
     - field.field.block_content.inline_navigation.field_inline_navigation_parent
-  module:
-    - content_hierarchy
 id: block_content.inline_navigation.default
 targetEntityType: block_content
 bundle: inline_navigation
@@ -29,10 +27,11 @@ content:
       transform_mode: inline_navigation
     third_party_settings: {  }
   field_inline_navigation_parent:
-    type: content_hierarchy_children
+    type: entity_transform
     weight: '3'
     region: content
     label: omit
-    settings: {  }
+    settings:
+      transform_mode: inline_navigation
     third_party_settings: {  }
 hidden: {  }
