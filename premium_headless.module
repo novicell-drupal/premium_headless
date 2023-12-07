@@ -77,7 +77,6 @@ function premium_headless_entity_transform_alter(&$transformation) {
         else {
           $transform_mode .= '_flex_height';
         }
-        dpm($transformation['field_image_media']);
       }
     }
   }
