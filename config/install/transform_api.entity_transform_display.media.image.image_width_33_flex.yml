@@ -7,6 +7,8 @@ dependencies:
     - media.type.image
     - responsive_image.styles.3_column_flex_height
     - transform_api.entity_transform_mode.media.image_width_33_flex
+  module:
+    - transform_api_responsive_image
 id: media.image.image_width_33_flex
 targetEntityType: media
 bundle: image

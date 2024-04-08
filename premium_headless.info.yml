@@ -6,6 +6,7 @@ core_version_requirement: ^8 || ^9 || ^10
 
 dependencies:
   - transform_api:transform_api
+  - transform_api:transform_api_responsive_image
 
 interface translation project: premium_headless
 interface translation server pattern: modules/premium_headless/translations/%language.po
