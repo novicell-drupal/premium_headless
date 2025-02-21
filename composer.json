@@ -9,6 +9,6 @@
   "homepage": "https://www.novicell.dk",
   "minimum-stability": "dev",
   "require": {
-    "drupal/transform_api": "^1.0@RC"
+    "drupal/transform_api": "^1.0"
   }
 }
