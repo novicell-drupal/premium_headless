@@ -1,7 +1,7 @@
 {
   "name": "novicell/premium_headless",
   "type": "drupal-module",
-  "description": "Includes basic setup for Search API installed with the Database as backend.",
+  "description": "Includes basic setup for headless sites using Transform API.",
   "keywords": [
     "Novicell"
   ],
