@@ -2,7 +2,8 @@ name: Premium headless
 description: Includes basic setup for headless sites using Transform API.
 package: Drupal Premium
 type: module
-core_version_requirement: ^8 || ^9 || ^10 || ^11
+version: '2.0'
+core_version_requirement: ^10 || ^11
 
 dependencies:
   - transform_api:transform_api
