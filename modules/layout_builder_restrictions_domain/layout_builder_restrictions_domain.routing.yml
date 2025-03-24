@@ -1,0 +1,15 @@
+entity.domain_restriction.collection:
+  path: '/admin/config/content/layout_builder_restrictions_domain'
+  defaults:
+    _entity_list: 'domain_restriction'
+    _title: 'Layout Builder Restrictions Domain'
+  requirements:
+    _permission: 'configure layout builder restrictions'
+
+entity.domain_restriction.add_form:
+  path: '/admin/config/content/layout_builder_restrictions_domain/add'
+  defaults:
+    _entity_form: 'domain_restriction.add'
+    _title: 'Add domain restriction'
+  requirements:
+    _permission: 'configure layout builder restrictions'

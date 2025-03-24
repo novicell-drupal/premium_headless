@@ -1,0 +1,5 @@
+layout_builder_restrictions_domain.add_domain:
+  route_name: 'entity.domain_restriction.add_form'
+  title: 'Add domain restriction'
+  appears_on:
+    - entity.domain_restriction.collection

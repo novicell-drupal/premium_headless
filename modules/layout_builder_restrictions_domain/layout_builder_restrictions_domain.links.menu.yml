@@ -1,0 +1,5 @@
+layout_builder_restrictions_domain.list:
+  title: 'Layout Builder Restrictions Domain'
+  route_name: entity.domain_restriction.collection
+  parent: system.admin_config_content
+  description: 'Manage which Layout Builder Restrictions to put on domains.'

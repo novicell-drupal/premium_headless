@@ -1,0 +1,10 @@
+name: Layout Builder Restrictions Domain
+description: 'Manage which fields & layouts are available in Layout Builder based on domain'
+type: module
+package: Domain
+core_version_requirement: ^9 || ^10 || ^11
+
+dependencies:
+  - drupal:layout_builder
+  - layout_builder_restrictions:layout_builder_restrictions
+  - domain:domain_access
