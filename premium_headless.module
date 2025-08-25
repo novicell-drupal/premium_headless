@@ -80,18 +80,6 @@ function premium_headless_entity_transform_alter(&$transformation) {
       }
     }
   }
-
-  /* Node alterations */
-  elseif ($transformation['entity_type'] === 'node') {
-    /** @var \Drupal\node\Entity\Node $node */
-    $node = $entity;
-    if (isset($transformation['transform_mode']) && in_array($transformation['transform_mode'], [
-        'teaser',
-        'inline_navigation'
-      ])) {
-      $transformation['url'] = $entity->toUrl()->toString();
-    }
-  }
 }
 
 /**
