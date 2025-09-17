@@ -23,4 +23,15 @@ function premium_headless_install() {
   $regions['header'] = t('Header');
   $regions['footer'] = t('Footer');
   $config->save();
+
+  // Set weight of module to -10 so it runs before other modules due to hooks.
+  module_set_weight('premium_headless', -10);
+}
+
+/**
+ * Set module weight to -10 in case it was not set during install.
+ */
+function premium_headless_update_10001(&$sandbox) {
+  // Change weight of module to -10 so it runs before other modules due to hooks.
+  module_set_weight('premium_headless', -10);
 }
