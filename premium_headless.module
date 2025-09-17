@@ -125,6 +125,7 @@ function premium_headless_section_transform_alter(&$transformation) {
     foreach ($components as $index => $component) {
       if ($component instanceof \Drupal\transform_api\Transform\EntityTransform) {
         $component->setValue('transform_mode', $transform_mode);
+        $component->setTransformMode($transform_mode);
       }
     }
   }
