@@ -1,0 +1,16 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - announcement
+id: announcements
+region: content
+weight: '-2'
+provider: null
+plugin: announcement
+settings:
+  id: announcement
+  label: Announcements
+  provider: announcement
+  label_display: null
+visibility: {  }

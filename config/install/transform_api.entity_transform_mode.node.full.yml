@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - node
-id: node.inline_navigation
-label: 'Inline navigation'
+id: node.full
+label: 'Full content'
 targetEntityType: node
 cache: true

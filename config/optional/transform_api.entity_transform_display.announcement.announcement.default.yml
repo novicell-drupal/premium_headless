@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.announcement.announcement.body
+    - field.field.announcement.announcement.field_dismissable
+  module:
+    - announcement
+id: announcement.announcement.default
+targetEntityType: announcement
+bundle: announcement
+mode: default
+content:
+  body:
+    type: text_format
+    weight: '1'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_dismissable:
+    type: boolean
+    weight: '2'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  label:
+    weight: '0'
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  url: true

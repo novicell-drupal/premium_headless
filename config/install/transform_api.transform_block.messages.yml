@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: messages
+region: content
+weight: '-1'
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: transform_api
+  label_display: null
+visibility: {  }

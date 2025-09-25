@@ -25,4 +25,10 @@ content:
     settings:
       transform_mode: list_view
     third_party_settings: {  }
-hidden: {  }
+  label:
+    weight: -100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

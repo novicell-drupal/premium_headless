@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.calendar
+    - field.field.block_content.calendar.field_display
+    - field.field.block_content.calendar.field_event_types
+  module:
+    - styles
+id: block_content.calendar.default
+targetEntityType: block_content
+bundle: calendar
+mode: default
+content:
+  field_display:
+    type: styles
+    weight: '0'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_event_types:
+    type: entity_reference_labels
+    weight: '1'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  label: true
+  langcode: true

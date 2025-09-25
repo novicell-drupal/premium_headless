@@ -19,4 +19,10 @@ content:
     settings:
       transform_mode: teaser
     third_party_settings: {  }
-hidden: {  }
+  label:
+    weight: -100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

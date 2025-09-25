@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.link_card.field_link
+    - field.field.paragraph.link_card.field_media
+    - field.field.paragraph.link_card.field_text
+    - field.field.paragraph.link_card.field_title
+    - paragraphs.paragraphs_type.link_card
+id: paragraph.link_card.default
+targetEntityType: paragraph
+bundle: link_card
+mode: default
+content:
+  field_link:
+    type: link
+    weight: '0'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_media:
+    type: entity_transform
+    weight: '1'
+    region: content
+    label: omit
+    settings:
+      transform_mode: list_view
+    third_party_settings: {  }
+  field_text:
+    type: plain_text
+    weight: '2'
+    region: content
+    label: omit
+    settings:
+      text_length: 0
+    third_party_settings: {  }
+  field_title:
+    type: value
+    weight: '3'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.link_box
+    - field.field.block_content.link_box.field_cta
+    - field.field.block_content.link_box.field_link_cards
+    - field.field.block_content.link_box.field_title
+  module:
+    - styles
+id: block_content.link_box.default
+targetEntityType: block_content
+bundle: link_box
+mode: default
+content:
+  field_cta:
+    type: styled_link
+    weight: '1'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_link_cards:
+    type: entity_transform
+    weight: '2'
+    region: content
+    label: omit
+    settings:
+      transform_mode: default
+    third_party_settings: {  }
+  field_title:
+    type: value
+    weight: '0'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  label: true
+  langcode: true

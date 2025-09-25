@@ -9,7 +9,17 @@ id: media.icon.default
 targetEntityType: media
 bundle: icon
 mode: default
-content: {  }
+content:
+  label:
+    weight: -100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
+  created: true
   field_media_category: true
   field_media_icons: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -3,19 +3,71 @@ status: true
 dependencies:
   config:
     - block_content.type.hero
-    - field.field.block_content.hero.field_hero
+    - field.field.block_content.hero.field_background
+    - field.field.block_content.hero.field_color_theme
+    - field.field.block_content.hero.field_cta
+    - field.field.block_content.hero.field_overlay
+    - field.field.block_content.hero.field_text
+    - field.field.block_content.hero.field_text_position
+    - field.field.block_content.hero.field_title
     - transform_api.entity_transform_mode.block_content.full_width
+  module:
+    - styles
 id: block_content.hero.full_width
 targetEntityType: block_content
 bundle: hero
 mode: full_width
 content:
-  field_hero:
+  field_background:
     type: entity_transform
     weight: '0'
     region: content
     label: omit
     settings:
-      transform_mode: full_width
+      transform_mode: hero_full_width
     third_party_settings: {  }
-hidden: {  }
+  field_color_theme:
+    type: styles
+    weight: '1'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_cta:
+    type: styled_link
+    weight: '2'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_overlay:
+    type: boolean
+    weight: '3'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_text:
+    type: text_format
+    weight: '4'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_text_position:
+    type: styles
+    weight: '5'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+  field_title:
+    type: value
+    weight: '6'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  label: true
+  langcode: true

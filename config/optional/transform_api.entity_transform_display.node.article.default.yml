@@ -2,11 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.article.body
+    - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_type
     - field.field.node.article.field_description
-    - field.field.node.article.field_header
-    - field.field.node.article.field_hide_breadcrumb
-    - field.field.node.article.field_hide_title
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
     - field.field.node.article.field_meta_tags
@@ -17,45 +16,30 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
+  field_article_categories:
+    type: entity_reference_links
+    weight: '6'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
   field_article_type:
     type: entity_reference_links
-    weight: '5'
+    weight: '3'
     region: content
     label: omit
     settings: {  }
     third_party_settings: {  }
   field_description:
     type: value
-    weight: '0'
-    region: content
-    label: omit
-    settings: {  }
-    third_party_settings: {  }
-  field_header:
-    type: entity_transform
-    weight: '3'
-    region: content
-    label: omit
-    settings:
-      transform_mode: default
-    third_party_settings: {  }
-  field_hide_breadcrumb:
-    type: boolean
     weight: '1'
-    region: content
-    label: omit
-    settings: {  }
-    third_party_settings: {  }
-  field_hide_title:
-    type: boolean
-    weight: '2'
     region: content
     label: omit
     settings: {  }
     third_party_settings: {  }
   field_list_date:
     type: datetime_simple
-    weight: '6'
+    weight: '4'
     region: content
     label: omit
     settings:
@@ -64,7 +48,7 @@ content:
     third_party_settings: {  }
   field_list_media:
     type: entity_transform
-    weight: '9'
+    weight: '7'
     region: content
     label: omit
     settings:
@@ -72,7 +56,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag
-    weight: '7'
+    weight: '5'
     region: content
     label: omit
     settings: {  }
@@ -84,11 +68,21 @@ content:
     label: omit
     settings: {  }
     third_party_settings: {  }
+  label:
+    weight: '0'
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   layout_builder__layout:
     type: layout_builder
-    weight: '4'
+    weight: '2'
     region: content
     label: omit
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
+  field_hide_breadcrumb: true
+  field_hide_title: true
+  langcode: true
+  url: true

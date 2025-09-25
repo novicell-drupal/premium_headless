@@ -1,7 +1,6 @@
-langcode: en
 regions:
   header: Header
   content: Content
   footer: Footer
 default_region: content
-collapse_regions: true
+collapse_regions: false

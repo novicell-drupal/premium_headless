@@ -1,21 +1,31 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - block_content.type.hero
-    - field.field.block_content.hero.field_hero
+    - field.field.block_content.hero.field_background
+    - field.field.block_content.hero.field_color_theme
+    - field.field.block_content.hero.field_cta
+    - field.field.block_content.hero.field_overlay
+    - field.field.block_content.hero.field_text
+    - field.field.block_content.hero.field_text_position
     - transform_api.entity_transform_mode.block_content.width_50
 id: block_content.hero.width_50
 targetEntityType: block_content
 bundle: hero
 mode: width_50
 content:
-  field_hero:
-    type: entity_transform
-    weight: '0'
-    region: content
-    label: omit
-    settings:
-      transform_mode: width_50
+  label:
+    weight: -100
+    settings: {  }
     third_party_settings: {  }
-hidden: {  }
+    region: content
+hidden:
+  field_background: true
+  field_color_theme: true
+  field_cta: true
+  field_overlay: true
+  field_text: true
+  field_text_position: true
+  field_title: true
+  langcode: true
