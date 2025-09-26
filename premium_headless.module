@@ -125,7 +125,6 @@ function premium_headless_section_transform_alter(&$transformation) {
         $transform_mode = 'width_100';
         break;
       case 'layout_article_sidebar_section':
-        \Drupal::logger('premium_headless')->debug($region);
         if ($region == 'content') {
           $transform_mode = 'width_66';
         } else {
@@ -133,7 +132,6 @@ function premium_headless_section_transform_alter(&$transformation) {
         }
         break;
       default:
-        \Drupal::logger('premium_headless')->debug($layout_id);
         $transform_mode = 'default';
         break;
     }
