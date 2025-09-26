@@ -118,7 +118,22 @@ function premium_headless_section_transform_alter(&$transformation) {
       case 'layout_threecol_section':
         $transform_mode = 'width_33';
         break;
+      case 'layout_hero_section':
+        $transform_mode = 'full_width';
+        break;
+      case 'layout_article_section':
+        $transform_mode = 'width_100';
+        break;
+      case 'layout_article_sidebar_section':
+        \Drupal::logger('premium_headless')->debug($region);
+        if ($region == 'content') {
+          $transform_mode = 'width_66';
+        } else {
+          $transform_mode = 'width_33';
+        }
+        break;
       default:
+        \Drupal::logger('premium_headless')->debug($layout_id);
         $transform_mode = 'default';
         break;
     }
