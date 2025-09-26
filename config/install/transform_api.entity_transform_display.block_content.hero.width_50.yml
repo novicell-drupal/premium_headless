@@ -9,6 +9,7 @@ dependencies:
     - field.field.block_content.hero.field_overlay
     - field.field.block_content.hero.field_text
     - field.field.block_content.hero.field_text_position
+    - field.field.block_content.hero.field_title
     - transform_api.entity_transform_mode.block_content.width_50
 id: block_content.hero.width_50
 targetEntityType: block_content

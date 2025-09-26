@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.content_carousel
+    - field.field.block_content.content_carousel.field_content_cards
+    - field.field.block_content.content_carousel.field_title
+id: block_content.content_carousel.default
+targetEntityType: block_content
+bundle: content_carousel
+mode: default
+content:
+  field_content_cards:
+    type: entity_transform
+    weight: '1'
+    region: content
+    label: omit
+    settings:
+      transform_mode: default
+    third_party_settings: {  }
+  field_title:
+    type: value
+    weight: '0'
+    region: content
+    label: omit
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  label: true
+  langcode: true
